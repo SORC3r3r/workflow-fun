@@ -1,0 +1,1 @@
+echo ${{ env.NAMESPACE_NAME}}
