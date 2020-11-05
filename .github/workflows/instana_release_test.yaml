@@ -20,5 +20,7 @@ jobs:
         with:
           releaseName: ${{ env.service_name }}
         env:
-          INSTANA_BASE: ${{ secrets.INSTANA_BASE }}
-          INSTANA_TOKEN: ${{ secrets.INSTANA_TOKEN }}
+          INSTANA_BASE: "${{ secrets.INSTANA_BASE }}"
+          INSTANA_TOKEN: "${{ secrets.INSTANA_TOKEN }}"
+      
+      
