@@ -1,4 +1,4 @@
-name: Build
+name: Instana Release
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: taimos/github-action-instana-release@v1
         with:
-          releaseName: testing
+          releaseName: test-foo/testing-bar
         env:
           INSTANA_BASE: ${{ secrets.INSTANA_BASE }}
           INSTANA_TOKEN: ${{ secrets.INSTANA_TOKEN }}
