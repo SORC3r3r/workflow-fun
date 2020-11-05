@@ -2,7 +2,7 @@ name: Instana Release
 
 on:
   push:
-    branches:
+    branches-ignore:
       - '**'
     tags-ignore:
       - '**'
