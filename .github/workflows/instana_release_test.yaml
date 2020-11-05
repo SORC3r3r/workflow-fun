@@ -1,0 +1,20 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+jobs:
+  build:
+
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: taimos/github-action-instana-release@v1
+        with:
+          releaseName: testing
+        env:
+          INSTANA_BASE: ${{ secrets.INSTANA_BASE }}
+          INSTANA_TOKEN: ${{ secrets.INSTANA_TOKEN }}
