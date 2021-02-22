@@ -1,1 +1,1 @@
-echo ${{ env.NAMESPACE_NAME}}
+echo "${{ env.NAMESPACE_NAME}}"

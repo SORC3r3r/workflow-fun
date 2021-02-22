@@ -1,0 +1,11 @@
+name: Merge PR
+on:
+  pull_request:
+    types: [closed]
+jobs:
+  mergePullRequest:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Context
+        run: echo "$GITHUB_CONTEXT"

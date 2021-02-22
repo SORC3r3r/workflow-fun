@@ -1,0 +1,26 @@
+name: Instana Release
+
+on:
+  push:
+    branches-ignore:
+      - '**'
+    tags-ignore:
+      - '**'
+jobs:
+  build:
+
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Environment Variables
+        run: |
+          echo "service_name=test-foo/test-bar" >> $GITHUB_ENV
+      - uses: taimos/github-action-instana-release@v1
+        if: startsWith(github.ref, 'refs/heads/lab') || github.ref == 'refs/heads/master'
+        with:
+          releaseName: ${{ env.service_name }}
+        env:
+          INSTANA_BASE: "${{ secrets.INSTANA_BASE }}"
+          INSTANA_TOKEN: "${{ secrets.INSTANA_TOKEN }}"
+      
+      
